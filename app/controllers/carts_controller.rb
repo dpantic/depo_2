@@ -15,8 +15,8 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.xml
   def show
-      begin
-    @cart = Cart.find(params[:id])
+    begin
+      @cart = Cart.find(params[:id])
     rescue ActiveRecord::RecordNotFound
       logger.error "Attemp to access invalid cart #{params[:id]}"
       redirect_to store_url, :notice => 'Invalid cart'
@@ -86,6 +86,7 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
 
     respond_to do |format|
+    # format.html { redirect_to(store_url, :notice => 'Your cart is currently empty')) }    
       format.html { redirect_to(store_url) }
       format.js
       format.xml  { head :ok }

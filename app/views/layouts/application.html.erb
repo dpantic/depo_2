@@ -11,7 +11,6 @@
   <%= csrf_meta_tag %>
 </head>
 <body id="store">
-
   <div id="banner">	
 	<%= form_tag store_path, :class => 'locale' do %>
 	<%= select_tag 'set_locale', options_for_select(LANGUAGES, I18n.locale.to_s),
@@ -23,11 +22,11 @@
 	<%= @page_title || t('.title') %>
   </div>
 <div id="columns">
-	<div id="side">
-	<!--	<div id="cart"> -->		
-			<% if @cart %>
+	<div id="side"> 
+	 	
+			<% if @cart %> 
 			<%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do %>
-			  <%= render @cart %>
+			  <%= render @cart %> 
 			<% end %>
 		<% end %>
 				
