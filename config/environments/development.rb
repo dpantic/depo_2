@@ -1,6 +1,6 @@
 Depo::Application.configure do
 
-    config.action_mailer.delivery_method = :test #:smtp
+    config.action_mailer.delivery_method =  :smtp # :test #:
 
 
 #Following are typical settings for GMail.
